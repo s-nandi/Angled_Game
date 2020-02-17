@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     // General
     public Rigidbody2D rb;
+    public int lives;
 
     // Movement
     //public float moveSpeed = 5f;
@@ -19,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
+        lives = 3;
         walkSpeed = 5.0f;
     }
 
@@ -29,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
         //movement.x = Input.GetAxis("Horizontal");
         //movement.y = Input.GetAxis("Vertical");
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
-
+        if (lives <= 0) Application.Quit();
     }
 
     // Fixed Update (called 50 times a second)

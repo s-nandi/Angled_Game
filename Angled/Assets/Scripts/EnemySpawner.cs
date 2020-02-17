@@ -30,11 +30,11 @@ public class EnemySpawner : MonoBehaviour
                 randY = player.transform.position.y - 4.5f;
             } else if (choice < 0.5f)
             {
-                randX = player.transform.position.y - 8.6f;
+                randX = player.transform.position.x - 8.6f;
                 randY = Random.Range(player.transform.position.y - 4.5f, player.transform.position.y + 4.5f);
             } else
             {
-                randX = player.transform.position.y + 8.6f;
+                randX = player.transform.position.x + 8.6f;
                 randY = Random.Range(player.transform.position.y - 4.5f, player.transform.position.y + 4.5f);
             }
             whereToSpawn = new Vector2(randX, randY);
