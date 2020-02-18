@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Shooting : MonoBehaviour
 {
-
     public Transform firePoint;
     public GameObject bulletPrefab;
     public float coolDownPeriodInSeconds = 0.5f;
+    public AudioSource fireSound;
 
     public float bulletForce = 20f;
     private float timeStamp;
@@ -15,6 +15,11 @@ public class Shooting : MonoBehaviour
     public float getAttackSpeed()
     {
         return 0.5f / coolDownPeriodInSeconds;
+    }
+
+    void Start()
+    {
+        fireSound = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -36,6 +41,7 @@ public class Shooting : MonoBehaviour
 
     void Shoot()
     {
+        fireSound.Play();
         timeStamp = Time.time + coolDownPeriodInSeconds;
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();

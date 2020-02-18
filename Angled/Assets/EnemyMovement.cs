@@ -12,6 +12,7 @@ public class EnemyMovement : MonoBehaviour
             if(GameObject.Find("Player").GetComponent<PlayerController>().lives > 0)
                 GameObject.Find("Player").GetComponent<PlayerController>().lives--;
         }
+
     }
 
     // Update is called once per frame
