@@ -1,12 +1,13 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [field: SerializeField] private int startingLives;
     // General
     public Rigidbody2D rb;
-    public int lives;
+    private int lives;
 
     // Movement
     //public float moveSpeed = 5f;
@@ -20,7 +21,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        lives = 3;
+        lives = startingLives;
         walkSpeed = 5.0f;
     }
 
