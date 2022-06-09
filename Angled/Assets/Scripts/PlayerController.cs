@@ -49,4 +49,9 @@ public class PlayerController : MonoBehaviour
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90;
         rb.rotation = angle;
     }
+
+    public int GetLives()
+    {
+        return lives;
+    }
 }

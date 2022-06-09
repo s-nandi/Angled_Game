@@ -17,6 +17,7 @@ public class LivesScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        lives.text = "Lives: " + GameObject.Find("Player").GetComponent<PlayerController>().lives.ToString();
+        PlayerController playerContoller = GameObject.Find("Player").GetComponent<PlayerController>();
+        lives.text = "Lives: " + playerContoller.GetLives().ToString();
     }
 }
