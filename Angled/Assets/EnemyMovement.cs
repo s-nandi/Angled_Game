@@ -7,12 +7,12 @@ public class EnemyMovement : MonoBehaviour
     private float moveSpeed = 2.5f;
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        GameObject playerObject = GameObject.Find("Player");
+        if (collision.gameObject == playerObject)
         {
-            if(GameObject.Find("Player").GetComponent<PlayerController>().lives > 0)
-                GameObject.Find("Player").GetComponent<PlayerController>().lives--;
+            PlayerController playerController = playerObject.GetComponent<PlayerController>();
+            playerController.reduceLife();
         }
-
     }
 
     // Update is called once per frame
